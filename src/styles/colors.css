@@ -1,0 +1,82 @@
+/*
+ * 컬러 팔레트 디자인 시스템
+ * 출처: ../../../컬러 팔레트 디자인 시스템.md (네이버 메인 CSS 토큰 기반)
+ */
+
+:root {
+  /* Primary Colors */
+  --color-primary: #03C75A;
+  --color-primary-light: #E6F9EE;
+  --color-primary-dark: #03A94D;
+  --color-primary-text: #00893D; /* 흰 배경 위 그린 텍스트 (대비 4.5:1) */
+
+  /* Secondary Colors */
+  --color-secondary: #406CDC;
+  --color-accent: #3283FD;
+
+  /* Background Colors */
+  --color-bg-primary: #FFFFFF;
+  --color-bg-secondary: #F8F9FA;
+  --color-bg-tertiary: #F4F6FA;
+
+  /* Text Colors */
+  --color-text-primary: #000000;
+  --color-text-secondary: #424242;
+  --color-text-muted: #737373;
+  --color-text-disabled: #B5B5B5;
+
+  /* Border Colors */
+  --color-border: rgba(0, 0, 0, 0.15);
+  --color-border-subtle: rgba(0, 0, 0, 0.10);
+  --color-divider: rgba(0, 0, 0, 0.08);
+
+  /* Interactive Colors */
+  --color-button-primary: #03C75A;
+  --color-button-hover: #03A94D;
+  --color-button-active: #00893D;
+  --color-link: #3283FD;
+  --color-link-hover: #2B6FD7;
+  --color-hover-layer: rgba(0, 0, 0, 0.06);
+
+  /* Status Colors */
+  --color-danger: #F4361E;
+  --color-success: #03A94D;
+
+  /* Effects */
+  --shadow-card: 0 4px 8px rgba(0, 0, 0, 0.13);
+}
+
+/* 다크 모드: 시스템 설정을 따름 */
+@media (prefers-color-scheme: dark) {
+  :root {
+    --color-primary: #03C75A;
+    --color-primary-light: rgba(3, 199, 90, 0.15);
+    --color-primary-dark: #29CF73;
+    --color-primary-text: #29CF73;
+
+    --color-secondary: #7E9FFF;
+    --color-accent: #5196FD;
+
+    --color-bg-primary: #1F1F1F;
+    --color-bg-secondary: #2D2D2D;
+    --color-bg-tertiary: #131313;
+
+    --color-text-primary: #FFFFFF;
+    --color-text-secondary: #E7E7E7;
+    --color-text-muted: #CDCDCD;
+    --color-text-disabled: #747474;
+
+    --color-border: rgba(255, 255, 255, 0.15);
+    --color-border-subtle: rgba(255, 255, 255, 0.10);
+    --color-divider: rgba(255, 255, 255, 0.08);
+
+    --color-button-primary: #05AC4F;
+    --color-button-hover: #03C75A;
+    --color-button-active: #089145;
+    --color-link: #5196FD;
+    --color-link-hover: #70A8FE;
+    --color-hover-layer: rgba(255, 255, 255, 0.10);
+
+    --shadow-card: 0 4px 12px rgba(0, 0, 0, 0.5);
+  }
+}
