@@ -2,12 +2,11 @@ import { useState } from 'react';
 import Alert from '@mui/material/Alert';
 import Box from '@mui/material/Box';
 import Button from '@mui/material/Button';
+import ButtonBase from '@mui/material/ButtonBase';
 import Collapse from '@mui/material/Collapse';
 import Grid from '@mui/material/Grid';
-import IconButton from '@mui/material/IconButton';
 import Rating from '@mui/material/Rating';
 import TextField from '@mui/material/TextField';
-import Tooltip from '@mui/material/Tooltip';
 import CasinoRoundedIcon from '@mui/icons-material/CasinoRounded';
 import ExpandMoreRoundedIcon from '@mui/icons-material/ExpandMoreRounded';
 import LockRoundedIcon from '@mui/icons-material/LockRounded';
@@ -172,15 +171,34 @@ function GuestbookForm({ onSubmit }) {
             이름 대신 랜덤 캐릭터로 표시돼요
           </Box>
         </Box>
-        <Tooltip title="캐릭터 다시 뽑기" arrow>
-          <IconButton
-            aria-label="캐릭터 다시 뽑기"
-            onClick={ () => setAvatarId((prev) => getRandomAvatarId(prev)) }
-            sx={{ color: 'var(--color-accent)' }}
-          >
-            <CasinoRoundedIcon />
-          </IconButton>
-        </Tooltip>
+        <ButtonBase
+          aria-label="캐릭터 다시 뽑기"
+          onClick={ () => setAvatarId((prev) => getRandomAvatarId(prev)) }
+          sx={{
+            flexShrink: 0,
+            display: 'flex',
+            flexDirection: 'column',
+            alignItems: 'center',
+            gap: 0.25,
+            px: 1,
+            py: 0.75,
+            borderRadius: 2,
+            color: 'var(--color-accent)',
+            transition: 'background-color 0.2s ease',
+            '&:hover': {
+              bgcolor: 'color-mix(in srgb, var(--color-accent) 10%, transparent)',
+            },
+            '&:hover .guestbook-form__dice': { transform: 'rotate(90deg)' },
+          }}
+        >
+          <CasinoRoundedIcon
+            className="guestbook-form__dice"
+            sx={{ transition: 'transform 0.3s ease' }}
+          />
+          <Box component="span" sx={{ fontSize: '0.75rem', fontWeight: 700, whiteSpace: 'nowrap' }}>
+            다시 뽑기
+          </Box>
+        </ButtonBase>
       </Box>
 
       <Grid container spacing={ 2 }>
