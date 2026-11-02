@@ -3,25 +3,7 @@ import IconButton from '@mui/material/IconButton';
 import Tooltip from '@mui/material/Tooltip';
 import CheckRoundedIcon from '@mui/icons-material/CheckRounded';
 import ContentCopyRoundedIcon from '@mui/icons-material/ContentCopyRounded';
-
-/**
- * 클립보드에 텍스트를 쓴다. (Clipboard API 미지원 브라우저는 textarea 방식으로 대체)
- * @param {string} text
- */
-async function writeClipboard(text) {
-  if (navigator.clipboard?.writeText) {
-    await navigator.clipboard.writeText(text);
-    return;
-  }
-  const textarea = document.createElement('textarea');
-  textarea.value = text;
-  textarea.style.position = 'fixed';
-  textarea.style.opacity = '0';
-  document.body.appendChild(textarea);
-  textarea.select();
-  document.execCommand('copy');
-  document.body.removeChild(textarea);
-}
+import { writeClipboard } from '../../utils/clipboard';
 
 /**
  * CopyButton 컴포넌트 - 클릭하면 텍스트를 복사하고 체크 아이콘으로 피드백
