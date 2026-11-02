@@ -27,6 +27,10 @@ jobs:
 
       - run: npm ci
       - run: npm run build
+        env:
+          # Supabase 공개 키는 저장소 Secrets에서 주입 (코드에 하드코딩하지 않음)
+          VITE_SUPABASE_URL: ${{ secrets.VITE_SUPABASE_URL }}
+          VITE_SUPABASE_ANON_KEY: ${{ secrets.VITE_SUPABASE_ANON_KEY }}
 
       - uses: actions/upload-pages-artifact@v3
         with:

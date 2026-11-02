@@ -2,6 +2,7 @@ import { Link as RouterLink } from 'react-router-dom'
 import Button from '@mui/material/Button'
 import PageContainer from '../components/PageContainer'
 import SectionCard from '../components/SectionCard'
+import ContactSection from '../components/contact/contact-section'
 
 function Home() {
   return (
@@ -47,8 +48,10 @@ function Home() {
         id="contact"
         label="05 · CONTACT"
         title="Contact"
-        description="여기는 Contact 섹션입니다. 연락처, SNS, 간단한 메시지 폼이 들어갈 예정입니다."
-      />
+        description="함께 이야기 나누고 싶으시다면 언제든 연락주세요. 방명록에 응원 한마디를 남겨주셔도 좋아요!"
+      >
+        <ContactSection />
+      </SectionCard>
     </PageContainer>
   )
 }
